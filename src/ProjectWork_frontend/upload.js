@@ -9,7 +9,7 @@ const run = async () => {
   // local
   const agent = new HttpAgent({ host: "http://127.0.0.1:4943", fetch });
   await agent.fetchRootKey();
-  const backend = replica(agent)("c5kvi-uuaaa-aaaaa-qaaia-cai");
+  const backend = replica(agent)("cgpjn-omaaa-aaaaa-qaakq-cai");
 
   // Production
   // const agent = new HttpAgent({ host: "https://icp-api.io", fetch });

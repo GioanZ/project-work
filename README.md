@@ -83,8 +83,38 @@ curl --location 'http://127.0.0.1:4943/add-row?canisterId={asset_canister_id}' \
     "supplier": "Company_Y",
     "cityOrigin": "City_B",
     "productType": "leather",
-    "qty": 10
+    "quantity": 10
 }'
+```
+There are two ways to get the database, one with the GET API and another with the X method. The following is an example for each of them.
+
+The GET returns the entire DB (following the order of insertion, with relative insertion number):
+```curl
+curl --location 'http://127.0.0.1:4943/get-row-db?canisterId={asset_canister_id}'
+```
+
+Output /get-row-db example in JSON:
+```json
+{
+  "0": {
+    "id": 23,
+    "companyName": "Company_X",
+    "cityDestination": "City_A",
+    "supplier": "Company_Y",
+    "cityOrigin": "City_B",
+    "productType": "leather",
+    "quantity": 10
+  },
+  "1": {
+    "id": 7,
+    "companyName": "Company_Z",
+    "cityDestination": "City_C",
+    "supplier": "Company_W",
+    "cityOrigin": "City_D",
+    "productType": "leather",
+    "quantity": 100
+  }
+}
 ```
 
 On ICP, in the backend part, you can see getDB() to get the DB as an array.

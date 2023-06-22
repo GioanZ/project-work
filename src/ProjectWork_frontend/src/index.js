@@ -9,7 +9,7 @@ const uploadBtn = document.getElementById("uploadBtn");
 //Note we will use "ProjectWork_backend" in this JavaScript code a few times to call the backend
 import { ProjectWork_backend } from "../../declarations/ProjectWork_backend";
 
-const backendCI = "c5kvi-uuaaa-aaaaa-qaaia-cai";
+const backendCI = "cgpjn-omaaa-aaaaa-qaakq-cai";
 
 //1. LOCAL DATA
 const documentList = [];
@@ -23,7 +23,7 @@ document.addEventListener(
 
     agent = new HttpAgent({ host: "http://127.0.0.1:4943", fetch });
     await agent.fetchRootKey();
-    backend = replica(agent)("c5kvi-uuaaa-aaaaa-qaaia-cai");
+    backend = replica(agent)("cgpjn-omaaa-aaaaa-qaakq-cai");
 
     return false;
   },

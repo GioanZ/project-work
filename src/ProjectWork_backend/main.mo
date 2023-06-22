@@ -135,7 +135,7 @@ shared ({ caller = creator }) actor class () {
     supplier : Text;
     cityOrigin : Text;
     productType : Text;
-    qty : Nat;
+    quantity : Nat;
   };
 
   let db = Buffer.Buffer<Row>(3);
@@ -185,6 +185,26 @@ shared ({ caller = creator }) actor class () {
           };
         };
       };
+    },
+  );
+
+  server.get(
+    "/get-row-db", func(req, res) : Response {
+      var counter = 0;
+
+      var rowJson = "{ ";
+      for (row in db.vals()) {
+        rowJson := rowJson # "\"" # Nat.toText(counter) # "\": { \"id\": \"" # Nat.toText(row.id) # "\", \"companyName\": \"" # row.companyName # "\", \"cityDestination\": \"" # row.cityDestination # "\", \"supplier\": \"" # row.supplier # "\", \"cityOrigin\": \"" # row.cityOrigin # "\", \"productType\": \"" # row.productType # "\", \"quantity\": " # Nat.toText(row.quantity) # " }, ";
+        counter += 1;
+      };
+      rowJson := Text.trimEnd(rowJson, #text ", ");
+      rowJson := rowJson # " }";
+
+      res.json({
+        status_code = 200;
+        body = rowJson;
+        cache_strategy = #noCache;
+      });
     },
   );
 

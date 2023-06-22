@@ -29,9 +29,9 @@ To learn more before you start working with ProjectWork, see the following docum
 - [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/references/motoko-ref/)
 - [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.icp0.io)
 
-We were able to implement it thanks to ICP technologies and @krpeacock's mo:Server library for Motoko programming language.
+If, on the other hand, you want to learn more about how HTTP calls work for motoko, check out @krpeacock's mo:Server library:
 
-- [mo:Server library](https://github.com/krpeacock/server)
+- [mo:Server](https://github.com/krpeacock/server)
 
 If you want to start working on your project right away, you might want to try the following commands:
 

@@ -71,9 +71,8 @@ npm start
 
 Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
 
-the API for adding a row to the database is a POST call. Here is an example of each through Postman's curls.
+The API for adding a row to the database is a POST call. Here's an example of a call through Postman.
 
-The POST inserts a single DB row:
 ```curl
 curl --location 'http://127.0.0.1:4943/add-row?canisterId={asset_canister_id}' \
 --header 'Content-Type: application/json' \
@@ -86,6 +85,13 @@ curl --location 'http://127.0.0.1:4943/add-row?canisterId={asset_canister_id}' \
     "productType": "leather",
     "qty": 10
 }'
+```
+
+On ICP, in the backend part, you can see getDB() to get the DB as an array.
+
+Output getDB() example in JSON:
+```json
+[{"id":"23","qty":"10","cityDestination":"City_A","supplier":"Company_Y","productType":"leather","companyName":"Company_X","cityOrigin":"City_B"},{"id":"7","qty":"100","cityDestination":"City_C","supplier":"Company_W","productType":"leather","companyName":"Company_Z","cityOrigin":"City_D"}]
 ```
 
 ### Note on frontend environment variables

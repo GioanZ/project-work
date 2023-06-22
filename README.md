@@ -29,6 +29,10 @@ To learn more before you start working with ProjectWork, see the following docum
 - [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/references/motoko-ref/)
 - [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.icp0.io)
 
+We were able to implement it thanks to ICP technologies and @krpeacock's mo:Server library for Motoko programming language.
+
+- [mo:Server library](https://github.com/krpeacock/server)
+
 If you want to start working on your project right away, you might want to try the following commands:
 
 ```bash
@@ -66,6 +70,23 @@ npm start
 ```
 
 Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+
+the API for adding a row to the database is a POST call. Here is an example of each through Postman's curls.
+
+The POST inserts a single DB row:
+```curl
+curl --location 'http://127.0.0.1:4943/add-row?canisterId={asset_canister_id}' \
+--header 'Content-Type: application/json' \
+--data '{
+    "id": 23,
+    "companyName": "Company_X",
+    "cityDestination": "City_A",
+    "supplier": "Company_Y",
+    "cityOrigin": "City_B",
+    "productType": "leather",
+    "qty": 10
+}'
+```
 
 ### Note on frontend environment variables
 

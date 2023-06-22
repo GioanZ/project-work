@@ -99,7 +99,7 @@ function updateTable() {
 async function displayPdf(fileName) {
   debugger;
   let fileObj = { filename: fileName };
-  const res = await fetch(`/file.pdf?canisterId=${backendCI}`, {
+  const res = await fetch(`/file?canisterId=${backendCI}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -36,7 +36,7 @@ If, on the other hand, you want to learn more about how HTTP calls work for moto
 If you want to start working on your project right away, you might want to try the following commands:
 
 ```bash
-cd ProjectWork/
+cd project-work/
 dfx help
 dfx canister --help
 ```
